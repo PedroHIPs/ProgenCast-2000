@@ -1,0 +1,366 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/04/2019, 13:38:40
+    Author     : aluno
+*/
+
+button.bcontrols{
+    align-items: center;
+    background-color: #141414;
+    color: red;
+    border: 1px white;
+    border-radius: 2px white;
+}
+
+button.tcontrols{
+    align-items: right;
+    background-color: #141414;
+    color: white;
+    border: 1px white;
+    border-radius: 2px white;
+}
+
+.f-card {
+    background-color:white;
+    width:77%;
+    border: 1px solid #d0d1d5;
+    margin: auto;
+    padding: 12px; 
+    font-size: 22px;
+}
+
+main{
+    width: auto;
+    height: auto;
+}
+
+div.he {
+    overflow: hidden;
+    background-image: url("../IMGS/fundoescuro.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animatecover 20s ease infinite; 
+    height: 156px;
+}
+
+div.he:hover{
+    background-image: url("../IMGS/fundoclaro.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition-duration: 0.7s;
+    height: 186px;
+}
+
+he.a.img.imgpg{
+    width: 200px;
+    height: 132px;
+    float: top;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+body.bwhite{
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+le{
+    float: right;
+}
+
+le a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: darkred;
+}
+
+.active {
+    background-color: red;
+}
+
+h1.cont{
+    color: white;
+    /*background-color: white;
+    border: 1px;
+    border-style: ridge;
+    opacity: 0.7;*/
+}
+
+body.b1{
+    background-image: url("../IMGS/tenor.gif");
+    background-repeat: repeat-y;
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
+/*.bcont{
+    position: relative;
+    background-color: black;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+}*/
+
+iframe.f1{
+    height: 100vh;
+    width: 100%;
+}
+
+h1.whitef1{
+    background-color: white;
+    align-content: center;
+    color: black;
+    align: center; 
+}
+
+h1.grayf1{
+    background-color: white;
+    align-content: center;
+    color: black;
+    align: center; 
+}
+
+ifs{
+    overflow: hidden;
+}
+
+.iframe.f1{
+    float: top; 
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+}
+
+.container{
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.top-bar{
+    width: 100%; 
+    height: 5%;
+    background: #141414;
+    color: #888;
+    line-height: 30px;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+}
+.top-bar .player-controls {
+    float: left;
+}
+.top-bar .player-controls span{
+    cursor: pointer;
+    padding: 0 5px;
+    -webkit-transition: all linear 0.2s;
+}
+.top-bar .player-controls span:hover {
+    color: #EEE;
+}
+.top-bar .player-display {
+    float: left;
+    float: right;
+}
+.top-bar .player-display .player-current-track {
+    color: white;
+}
+.top-bar .player {
+    float: left;
+}
+.top-bar .player-timeline {
+    float: left;
+    max-width: 60%;
+    width: 60%;
+    height: 4px;
+    margin-top: 13px;
+    background: #555;
+}
+.top-bar .player-timeline-control {
+    height: 4px;
+    background: #999;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    background: linear-gradient(-90deg, #ffbaba, #ff7b7b, #ff5252, #ff0000, #a70000);
+    animation: animate 10s ease infinite;
+    background-size: 400% 400%;
+    border: 2px solid red;
+    border-radius: 20px; 
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background: linear-gradient(-90deg, #ffbaba, #ff7b7b, #ff5252, #ff0000, #a70000);
+    animation: animate 10s ease infinite;
+    background-size: 400% 400%;
+    border: 2px solid red;
+    border-radius: 20px; 
+    color: white;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes animatecover{
+    0%{
+        background-position: 50% 0%;
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 50% 0%;
+    }
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 270px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #56ff5d;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: darkred;
+}
+
+.form-container .register {
+    background-color: gray;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+audio{
+    width: 100%;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+  background-color: black;
+  color: white;
+  transition-duration: 0.7s;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 400px;
+  max-height: 400px;
+  min-height: 400px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

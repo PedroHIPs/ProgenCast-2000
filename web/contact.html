@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ProgenCast 2000</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Button used to open the contact form - fixed at the bottom of the page */
+            .open-button {
+                background-color: #333;
+                color: white;
+                border: none;
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="CSS/myCSS.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/JavaScript" src="js/player.js"></script>
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+    </head>
+    <body class="b1">
+        <div class="he">
+            <p align="center">
+                <a href='index.html' > <img src='IMGS/progencast logo.png' width='200' height='132'/> </a>
+            </p>
+        </div>
+
+        <ul>
+            <li><a class="active" href="index.html">ProgenCast2000</a></li>
+            <li><a href="contact.html">Contatos</a></li>
+            <li><a href="Arts.html">Nossas Artes</a></li>
+            <le><a href='.' > <img src='IMGS/iconProfile.png' width='14px' height='14px' alt='iconProfile'/></a></le>
+            <le><button class="open-button" onclick="openForm()"><a>Seu Perfil</a></button></le>
+        </ul>
+            <div class="form-popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                    <h1>Login</h1>
+
+                    <label for="emailogin"><b>Email ou Login</b></label>
+                    <input type="text" placeholder="Enter Email ou Login" name="emailogin" required>
+
+                    <label for="pass"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit" class="btn" value="Logar">Login</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+
+            <div class="f-card">
+                Administradores:
+                <iframe src="SContactAdmin" name="ifAdmins" class="f1"></iframe>
+            </div>
+        <div class="top-bar">
+            <div class="container">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

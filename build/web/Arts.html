@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ProgenCast 2000</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Button used to open the contact form - fixed at the bottom of the page */
+            .open-button {
+                background-color: #333;
+                color: white;
+                border: none;
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="CSS/myCSS.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/JavaScript" src="js/player.js"></script>
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+
+            function login()
+            {
+                var ajax = false;
+
+                if (window.XMLHttpRequest)
+                { // Mozilla, Safari, ... 
+                    ajax = new XMLHttpRequest( );
+                } else if (window.ActiveXObject)
+                {// IE 
+                    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                if (ajax)
+                {
+                    //ajax.open("GET", "preenche", true);
+                    ajax.open("GET", "SLogin?login=" + document.getElementById('idlogin').value + "&pass=" + document.getElementById('idpass').value, true);
+                    ajax.onreadystatechange = function () {
+                        if (ajax.readyState == 4)
+                        {
+                            var userJson;
+                            try {
+                                userJson = JSON.parse(ajax.responseText);
+                            } catch (e) {
+                                userJson = eval('(' + ajax.responseText + ')');
+                            }
+                            document.getElementById('idname').value = userJson.Name;
+                            alert(userJson.Name);
+                        }
+                    };
+                }
+                ajax.send(null);
+            }
+
+        </script>
+    </head>
+    <body class="b1">
+        <div class="he">
+            <p align="center">
+                <a href='index.html' > <img src='IMGS/progencast logo.png' width='200' height='132'/> </a>
+            </p>
+        </div>
+
+        <ul>
+            <li><a class="active" href="index.html">ProgenCast2000</a></li>
+            <li><a href="contact.html">Contatos</a></li>
+            <li><a href="Arts.html">Nossas Artes</a></li>
+            <le><a href='.' > <img src='IMGS/iconProfile.png' width='14px' height='14px' alt='iconProfile'/></a></le>
+            <le><button class="open-button" onclick="openForm()"><a>Seu Perfil</a></button></le>
+        </ul>
+        <div class="form-popup" id="myForm">
+            <form action="" class="form-container">
+                <h1>Login</h1>
+
+                <label for="emailogin"><b>Email ou Login</b></label>
+                <input type="text" placeholder="Enter Email ou Login" name="emailogin" id="idlogin" required>
+
+                <label for="pass"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="idpass" required>
+
+                <button type="submit" class="btn" onclick="login()">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <button type="submit" class="btn register" onclick="login()">Cadastre-se</button>
+            </form>
+        </div>
+        <div class="f-card">
+            <h2> Página dedicada à expor nossas artes </h2>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin1.jpeg">
+                    <img src="IMGS/artepedrin1.jpeg" alt="ArtPedrin1" width="400" height="400">
+                </a>
+                    <div class="desc">"Irineu" por _pedrinnartz_</div>
+                </div>
+            </div>
+         
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin2.jpeg">
+                    <img src="IMGS/artepedrin2.jpeg" alt="ArtPedrin2" width="400" height="400">
+                </a>
+                    <div class="desc">"Firegirl" por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin3.jpeg">
+                    <img src="IMGS/artepedrin3.jpeg" alt="ArtPedrin3" width="400" height="400">
+                </a>
+                    <div class="desc">"Giartomo" por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin4.jpeg">
+                    <img src="IMGS/artepedrin4.jpeg" alt="ArtPedrin4" width="400" height="400">
+                </a>
+                    <div class="desc">"SnakeMoon" por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrohips6.jpg">
+                    <img src="IMGS/artepedrohips6.jpg" alt="ArtePedroHIPs6" width="400" height="400">
+                </a>
+                    <div class="desc">"Reaper" por HIPs </div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin5.jpeg">
+                    <img src="IMGS/artepedrin5.jpeg" alt="ArtPedrin5" width="400" height="400">
+                </a>
+                    <div class="desc">"A'n Elf" por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin7.jpeg">
+                    <img src="IMGS/artepedrin7.jpeg" alt="ArtPedrin7" width="400" height="400">
+                </a>
+                    <div class="desc">"Nippon" por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin8.jpeg">
+                    <img src="IMGS/artepedrin8.jpeg" alt="ArtPedrin8" width="400" height="400">
+                </a>
+                    <div class="desc">"Mountain" por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin9.jpeg">
+                    <img src="IMGS/artepedrin9.jpeg" alt="ArtPedrin9" width="400" height="400">
+                </a>
+                    <div class="desc">"Piknik" por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin10.jpeg">
+                    <img src="IMGS/artepedrin10.jpeg" alt="ArtPedrin10" width="400" height="400">
+                </a>
+                    <div class="desc">"Tample" por _pedrinnartz_</div>
+                </div>
+            </div>
+         
+
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrohips1.jpg">
+                    <img src="IMGS/artepedrohips1.jpg" alt="ArtePedroHIPs1" width="400" height="400">
+                </a>
+                    <div class="desc"> "Chun-li" por HIPs </div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrohips3.jpg">
+                    <img src="IMGS/artepedrohips3.jpg" alt="ArtePedroHIPs3" width="400" height="400">
+                </a>
+                    <div class="desc"> "BATMAN" por HIPs </div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrohips4.jpg">
+                    <img src="IMGS/artepedrohips4.jpg" alt="ArtePedroHIPs4" width="400" height="400">
+                </a>
+                    <div class="desc"> "The Flash" por HIPs </div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrohips5.jpg">
+                    <img src="IMGS/artepedrohips5.jpg" alt="ArtePedroHIPs5" width="400" height="400">
+                </a>
+                    <div class="desc"> "Tracer" por HIPs </div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrin6.jpeg">
+                    <img src="IMGS/artepedrin6.jpeg" alt="ArtPedrin6" width="400" height="400">
+                </a>
+                    <div class="desc">Feito por _pedrinnartz_</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrohips7.jpg">
+                    <img src="IMGS/artepedrohips7.jpg" alt="ArtePedroHIPs7" width="400" height="400">
+                </a>
+                    <div class="desc"> "Lust for Vengeance" por HIPs </div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/artepedrohips2.jpg">
+                    <img src="IMGS/artepedrohips2.jpg" alt="ArtePedroHIPs2" width="400" height="400">
+                </a>
+                    <div class="desc"> "D. Ace" por HIPs </div>
+                </div>
+            </div>
+        
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo2.jpeg">
+                    <img src="IMGS/Carmo2.jpeg" alt="ArteCarmo2" width="400" height="400">
+                </a>
+                    <div class="desc">"Esmeralda" por Carmo</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo3.jpeg">
+                    <img src="IMGS/Carmo3.jpeg" alt="ArteCarmo3" width="400" height="400">
+                </a>
+                    <div class="desc">"Traição" por Carmo</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo5.jpeg">
+                    <img src="IMGS/Carmo5.jpeg" alt="ArteCarmo5" width="400" height="400">
+                </a>
+                    <div class="desc">"Juiz do espaço" por Carmo</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo6.jpeg">
+                    <img src="IMGS/Carmo6.jpeg" alt="ArteCarmo6" width="400" height="400">
+                </a>
+                    <div class="desc">"Caos Iminente" por Carmo</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo7.jpeg">
+                    <img src="IMGS/Carmo7.jpeg" alt="ArteCarmo7" width="400" height="400">
+                </a>
+                    <div class="desc">"Olhar Calmo" por Carmo</div>
+                </div>
+            </div>          
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo9.jpeg">
+                    <img src="IMGS/Carmo9.jpeg" alt="ArteCarmo9" width="400" height="400">
+                </a>
+                    <div class="desc">"Menina Gato" por Carmo</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo1.jpeg">
+                    <img src="IMGS/Carmo1.jpeg" alt="ArteCarmo1" width="400" height="400">
+                </a>
+                    <div class="desc">"A janela da alma" por Carmo</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo4.jpeg">
+                    <img src="IMGS/Carmo4.jpeg" alt="ArteCarmo4" width="400" height="400">
+                </a>
+                    <div class="desc">"Sede de vingança" por Carmo</div>
+                </div>
+            </div>
+            
+            <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="IMGS/Carmo8.jpeg">
+                    <img src="IMGS/Carmo8.jpeg" alt="ArteCarmo8" width="400" height="400">
+                </a>
+                    <div class="desc">"Deusa do tempo" por Carmo</div>
+                </div>
+            </div>
+            
+            
+            <h1>.............................................................................................................</h1> 
+        </div>
+
+        <div class="top-bar">
+            <div class="container" align="center">
+            <button class="bcontrols" onclick="document.getElementById('demo').play()">Reproduzir o áudio</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').pause()">Pausar o áudio</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').volume += 0.1">Aumentar o volume</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').volume -= 0.1">Diminuir o volume</button>
+            <button class="tcontrols">     Playing: [PGC1] Metalinguagem: Experiências, conhecimento e entretenimento.</button>
+            </div>
+        </div>
+    </body>
+</html>

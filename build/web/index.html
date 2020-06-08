@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ProgenCast 2000</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Button used to open the contact form - fixed at the bottom of the page */
+            .open-button {
+                background-color: #333;
+                color: white;
+                border: none;
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="CSS/myCSS.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/JavaScript" src="js/player.js"></script>
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+
+            function login()
+            {
+                var ajax = false;
+
+                if (window.XMLHttpRequest)
+                { // Mozilla, Safari, ... 
+                    ajax = new XMLHttpRequest( );
+                } else if (window.ActiveXObject)
+                {// IE 
+                    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                if (ajax)
+                {
+                    //ajax.open("GET", "preenche", true);
+                    ajax.open("GET", "SLogin?login=" + document.getElementById('idlogin').value + "&pass=" + document.getElementById('idpass').value, true);
+                    ajax.onreadystatechange = function () {
+                        if (ajax.readyState == 4)
+                        {
+                            var userJson;
+                            try {
+                                userJson = JSON.parse(ajax.responseText);
+                            } catch (e) {
+                                userJson = eval('(' + ajax.responseText + ')');
+                            }
+                            document.getElementById('idname').value = userJson.Name;
+                            alert(userJson.Name);
+                        }
+                    };
+                }
+                ajax.send(null);
+            }
+
+        </script>
+    </head>
+    <body class="b1">
+        <div class="he">
+            <p align="center">
+                <a href='index.html' > <img src='IMGS/progencast logo.png' width='200' height='132'/> </a>
+            </p>
+        </div>
+
+        <ul>
+            <li><a class="active" href="index.html">ProgenCast2000</a></li>
+            <li><a href="contact.html">Contatos</a></li>
+            <li><a href="Arts.html">Nossas Artes</a></li>
+            <le><a href='.' > <img src='IMGS/iconProfile.png' width='14px' height='14px' alt='iconProfile'/></a></le>
+            <le><button class="open-button" onclick="openForm()"><a>Seu Perfil</a></button></le>
+        </ul>
+        <div class="form-popup" id="myForm">
+            <form action="" class="form-container">
+                <h1>Login</h1>
+
+                <label for="emailogin"><b>Email ou Login</b></label>
+                <input type="text" placeholder="Enter Email ou Login" name="emailogin" id="idlogin" required>
+
+                <label for="pass"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="idpass" required>
+
+                <button type="submit" class="btn" onclick="login()">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <button type="submit" class="btn register" onclick="login()">Cadastre-se</button>
+            </form>
+        </div>
+        <div class="f-card">
+            <h2> [PGC1] Metalinguagem: Experiências, conhecimento e entretenimento. </h2>
+            Versão em Video:
+            </br>
+            </br>
+            <iframe width="100%" height="409" src="https://www.youtube.com/embed/sFajek-PEyA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>                
+            </iframe>
+            </br>
+            </br>
+            Versão em audio:
+            </br>
+            </br>
+            <audio controls >
+                <source src="Audio Files/podcast1.mp3" id="demo">
+                Your browser does not support the audio element.
+            </audio>
+            <div align="center">
+            <button class="bcontrols" onclick="document.getElementById('demo').play()">Reproduzir o áudio</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').pause()">Pausar o áudio</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').volume += 0.1">Aumentar o volume</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').volume -= 0.1">Diminuir o volume</button>
+            </br>
+            </div>
+            </br>
+            </br>
+            <h2> Como fazer um podcast: </h2>
+            By: Coisa de nerd
+            </br>
+            </br>
+            <iframe width="100%" height="409" src="https://www.youtube.com/embed/Of5A6o9J_F8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>                
+            </iframe>
+            </br>
+        </div>
+
+        <div class="top-bar">
+            <div class="container" align="center">
+            <button class="bcontrols" onclick="document.getElementById('demo').play()">Reproduzir o áudio</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').pause()">Pausar o áudio</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').volume += 0.1">Aumentar o volume</button>
+            <button class="bcontrols" onclick="document.getElementById('demo').volume -= 0.1">Diminuir o volume</button>
+            <button class="tcontrols">     Playing: [PGC1] Metalinguagem: Experiências, conhecimento e entretenimento.</button>
+            </div>
+        </div>
+    </body>
+</html>
